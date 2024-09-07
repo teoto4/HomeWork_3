@@ -57,11 +57,13 @@ console.log(user);
 Створіть нову копію цього об'єкта і додайте до нього нову властивість — рейтинг книги.
 При цьому зміни в новій копії не повинні впливати на оригінальний об'єкт. */
 const book = {
-  name: "Lord of the ring",
-  autor: "Tolkien",
-  pages: 752,
+  title: "JavaScript: The Good Parts",
+  author: "Douglas Crockford",
+  year: 2008,
 };
 
 const copyBook = { ...book, rating: 5.0 };
 console.log(book);
 console.log(copyBook);
+
+/* */
