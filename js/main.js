@@ -66,4 +66,19 @@ const copyBook = { ...book, rating: 5.0 };
 console.log(book);
 console.log(copyBook);
 
-/* */
+/*5. Підрахунок частоти елементів
+Опис: Дано масив чисел. Використовуйте об'єкт Map для підрахунку частоти кожного числа в масиві.
+Поверніть об'єкт Map, де ключами будуть числа з масиву, а значеннями — їх частота */
+
+const numbers = [1, 2, 3, 2, 4, 3, 3, 5, 1, 4];
+
+const numberMap = numbers.reduce((map, currentNumber) => {
+  if (map.has(currentNumber)) {
+    map.set(currentNumber, map.get(currentNumber) + 1);
+  } else {
+    map.set(currentNumber, 1);
+  }
+  return map;
+}, new Map());
+
+console.log(numberMap);
