@@ -31,3 +31,23 @@ const longestNamePinguine = pinguinArray.reduce((name, currentName) => {
 });
 
 console.log(longestNamePinguine);
+
+/*3. Глибоке копіювання об'єкта
+Опис: Дано вкладений об'єкт, що містить інформацію про користувача і його вподобання.
+Створіть глибоку копію цього об'єкта так, щоб зміни в копії не зачіпали оригінал.
+Перевірте, що зміни в копії не впливають на оригінал.*/
+
+const user = {
+  name: "John",
+  age: 30,
+  preferences: {
+    favoriteColor: "blue",
+    hobbies: ["reading", "gaming"],
+  },
+};
+
+const userCopy = JSON.parse(JSON.stringify(user));
+userCopy.name = "Petr";
+userCopy.preferences.favoriteColor = "red";
+console.log(userCopy);
+console.log(user);
