@@ -82,3 +82,63 @@ const numberMap = numbers.reduce((map, currentNumber) => {
 }, new Map());
 
 console.log(numberMap);
+
+/*6. Зберігання даних про користувачів
+Опис: Вам потрібно створити систему управління даними користувачів, де кожному користувачеві відповідає його ID.
+Використовуйте об'єкт Map для зберігання даних про користувачів, таких як ім'я, вік та email.
+Напишіть функції для додавання нового користувача,
+отримання інформації про користувача за ID і видалення користувача за ID. */
+
+//Конструктор
+function User(name, id, age, email) {
+  this.name = name;
+  this.id = id;
+  this.age = age;
+  this.email = email;
+}
+
+//База юзеров
+const users = new Map();
+
+//Функция добавления пользователя
+function addUser(user) {
+  if (!users.has(user.id)) {
+    users.set(user.id, user);
+    console.log(`Welcome ${user.name}`);
+  } else {
+    console.log(`We have ${user.name} already on this base`);
+  }
+}
+
+//Создал юзеров
+const user1 = new User("Kevin", 213213, 23, "kevin@best.com");
+const user2 = new User("Alice", 213214, 28, "alice@wonder.com");
+//Добвил в базу
+addUser(user1);
+addUser(user2);
+
+//Получаем по ай ди
+function getUser(id) {
+  if (users.has(id)) {
+    return users.get(id);
+  } else {
+    console.log(`We have not ID ${id}`);
+    return `user not found`;
+  }
+}
+
+console.log(getUser(213213));
+
+//Функция удаления
+function deleteUser(id) {
+  if (users.has(id)) {
+    users.delete(id);
+    return console.log(`User ${id} delete`);
+  } else {
+    console.log(`We have not ID ${id}`);
+    return `user not found`;
+  }
+}
+
+deleteUser(213213);
+console.log(users);
