@@ -51,3 +51,17 @@ userCopy.name = "Petr";
 userCopy.preferences.favoriteColor = "red";
 console.log(userCopy);
 console.log(user);
+
+/*4. Поверхневе копіювання з додаванням властивостей
+Опис: Дано об'єкт, що представляє книгу.
+Створіть нову копію цього об'єкта і додайте до нього нову властивість — рейтинг книги.
+При цьому зміни в новій копії не повинні впливати на оригінальний об'єкт. */
+const book = {
+  name: "Lord of the ring",
+  autor: "Tolkien",
+  pages: 752,
+};
+
+const copyBook = { ...book, rating: 5.0 };
+console.log(book);
+console.log(copyBook);
