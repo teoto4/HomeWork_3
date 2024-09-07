@@ -22,3 +22,12 @@ const howManyPinguin = pinguinArray.reduce((accumulator, currentValue) => {
 }, {});
 
 console.log(howManyPinguin);
+
+/*2. Пошук найдовшого слова в масиві рядків (метод reduce)
+Опис: Дано масив рядків. Знайдіть найдовше слово в масиві. */
+
+const longestNamePinguine = pinguinArray.reduce((name, currentName) => {
+  return currentName.length > name.length ? currentName : name;
+});
+
+console.log(longestNamePinguine);
